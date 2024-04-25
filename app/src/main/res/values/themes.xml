@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme should inherit from Theme.AppCompat or a descendant -->
+    <style name="Theme.MobileDevelopmentAfleveringMahir" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme by adding your own items here -->
+    </style>
+</resources>

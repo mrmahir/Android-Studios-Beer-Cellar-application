@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "576950834098",
+    "project_id": "mobiledevelopmentaflevering",
+    "storage_bucket": "mobiledevelopmentaflevering.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576950834098:android:08ab71818d2c83bd978aab",
+        "android_client_info": {
+          "package_name": "com.example.mobiledevelopment_aflevering_mahir"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM3yLDCnjGqhtuMZcunM6rXPjTD4nglkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
