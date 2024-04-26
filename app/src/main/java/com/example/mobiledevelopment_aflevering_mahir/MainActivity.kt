@@ -20,6 +20,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         // Check if the user is logged in
         if (FirebaseAuth.getInstance().currentUser != null) {
             // User is logged in, navigate to MainPage
@@ -28,9 +29,14 @@ class MainActivity : ComponentActivity() {
             // User is not logged in, navigate to SignInActivity
             startActivity(Intent(this, SignInActivity::class.java))
         }
+
         finish() // Finish MainActivity so it's not in the back stack
+
+
     }
 }
+
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
@@ -47,3 +53,4 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+

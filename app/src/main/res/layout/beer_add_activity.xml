@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/user_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextBrewery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/brewery_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/style_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextAbv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/abv_hint"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextIbu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/volume_hint"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextPictureUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/picture_url_hint"
+        android:inputType="textUri" />
+
+    <EditText
+        android:id="@+id/editTextHowMany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/how_many_hint"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/buttonAddBeer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_beer" />
+</LinearLayout>

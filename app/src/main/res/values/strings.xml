@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Mobile Development - Aflevering - Mahir</string>
+    <string name="user_hint">User</string>
+    <string name="brewery_hint">Brewery</string>
+    <string name="name_hint">Beer Name</string>
+    <string name="style_hint">Beer Style</string>
+    <string name="abv_hint">ABV (Alcohol by Volume)</string>
+    <string name="volume_hint">Volume (Bitterness)</string>
+    <string name="picture_url_hint">Picture URL</string>
+    <string name="how_many_hint">Quantity</string>
+    <string name="add_beer">Add Beer</string>
 </resources>

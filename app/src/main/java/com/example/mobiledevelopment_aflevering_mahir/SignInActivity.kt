@@ -17,13 +17,6 @@ import com.google.firebase.auth.FirebaseAuth
 class SignInActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Check if the user is already logged in
-        if (FirebaseAuth.getInstance().currentUser != null) {
-            navigateToMain()  // User is already logged in, navigate to the main activity
-            return  // Stop further execution of this function
-        }
-
         setContent {
             SignInScreen()
         }
@@ -34,7 +27,8 @@ class SignInActivity : ComponentActivity() {
         val auth = FirebaseAuth.getInstance()
         var email by remember { mutableStateOf("") }
         var password by remember { mutableStateOf("") }
-        var message by remember { mutableStateOf("") }  // MutableState for message
+        var message by remember { mutableStateOf("") }
+        var showError by remember { mutableStateOf(false) }  // State to control the visibility of the error message
 
         MobileDevelopmentAfleveringMahirTheme {
             Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
@@ -45,28 +39,54 @@ class SignInActivity : ComponentActivity() {
                 ) {
                     TextField(
                         value = email,
-                        onValueChange = { email = it },
+                        onValueChange = {
+                            email = it
+                            showError = false  // Hide error when user starts typing
+                        },
                         label = { Text("Email") },
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth(),
+                        isError = showError  // Show error if showError is true
                     )
+                    if (showError && email.isBlank()) {
+                        Text("Email cannot be empty", color = MaterialTheme.colorScheme.error)
+                    }
                     Spacer(modifier = Modifier.height(8.dp))
                     TextField(
                         value = password,
-                        onValueChange = { password = it },
+                        onValueChange = {
+                            password = it
+                            showError = false  // Hide error when user starts typing
+                        },
                         label = { Text("Password") },
                         visualTransformation = PasswordVisualTransformation(),
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth(),
+                        isError = showError  // Show error if showError is true
                     )
+                    if (showError && password.isBlank()) {
+                        Text("Password cannot be empty", color = MaterialTheme.colorScheme.error)
+                    }
                     Spacer(modifier = Modifier.height(16.dp))
-                    Button(onClick = { loginUser(email, password, auth) { message = it } }) {
+                    Button(onClick = {
+                        if (email.isBlank() || password.isBlank()) {
+                            showError = true  // Show error if either field is blank
+                        } else {
+                            loginUser(email, password, auth) { message = it }
+                        }
+                    }) {
                         Text("Login")
                     }
                     Spacer(modifier = Modifier.height(8.dp))
-                    Button(onClick = { registerUser(email, password, auth) { message = it } }) {
+                    Button(onClick = {
+                        if (email.isBlank() || password.isBlank()) {
+                            showError = true  // Show error if either field is blank
+                        } else {
+                            registerUser(email, password, auth) { message = it }
+                        }
+                    }) {
                         Text("Register")
                     }
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = message)
+                    Text(text = message)  // Show the login or registration message
                 }
             }
         }
@@ -95,7 +115,7 @@ class SignInActivity : ComponentActivity() {
     }
 
     private fun navigateToMain() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this@SignInActivity, MainActivity::class.java))
         finish()
     }
 }

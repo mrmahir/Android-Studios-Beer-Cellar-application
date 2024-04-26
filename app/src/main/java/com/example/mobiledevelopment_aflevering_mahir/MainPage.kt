@@ -20,10 +20,25 @@ class MainPage : AppCompatActivity() {
             return // Prevent further execution
         }
 
-        // Set up the logout button
-        binding.logoutButton.setOnClickListener {
-            signOut()
+        // Button to view beers
+        binding.viewBeersButton.setOnClickListener {
+            startActivity(Intent(this, BeerListActivity::class.java))
         }
+
+        binding.addBeerButton.setOnClickListener {
+            startActivity(Intent(this, BeerAddActivity::class.java))
+        }
+
+        binding.logoutButton.setOnClickListener{
+            startActivity(Intent(this, BeerAddActivity::class.java))
+        }
+
+        binding.viewUserBeersButton.setOnClickListener{
+            startActivity(Intent(this, SearchBeersActivity::class.java))
+        }
+
+        // Set up the logout button
+
     }
 
     fun signOut() {

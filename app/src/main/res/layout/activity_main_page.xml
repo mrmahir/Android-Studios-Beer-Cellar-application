@@ -7,7 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".MainPage">
 
-    <!-- Add a Button for logging out -->
+    <Button
+        android:id="@+id/viewBeersButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Beers"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- New button for viewing beers of the logged-in user -->
+    <Button
+        android:id="@+id/viewUserBeersButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Beers"
+        app:layout_constraintTop_toBottomOf="@+id/viewBeersButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- New button for adding a new beer -->
+    <Button
+        android:id="@+id/addBeerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Beer"
+        app:layout_constraintTop_toBottomOf="@id/viewUserBeersButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
     <Button
         android:id="@+id/logoutButton"
         android:layout_width="wrap_content"
@@ -16,6 +47,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/viewBeersButton"
+        android:layout_marginTop="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
